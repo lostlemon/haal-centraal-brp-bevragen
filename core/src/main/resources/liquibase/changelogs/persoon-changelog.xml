@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="createPersoonTable" author="akosh">
+        <createTable tableName="Persoon">
+            <column autoIncrement="true" name="id" type="BIGINT(20)">
+                <constraints primaryKey="true" unique="true"/>
+            </column>
+            <column name="bsn" type="BIGINT(9)"/>
+            <column name="anummer" type="BIGINT(10)"/>
+            <column name="uuid" type="VARCHAR(40)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="voornamen" type="VARCHAR(255)"/>
+            <column name="geslachtsnaam" type="VARCHAR(255)"/>
+            <column name="voorvoegsel" type="VARCHAR(255)"/>
+            <column name="inOnderzoek" type="boolean"/>
+            <column name="inOnderzoekNaam" type="boolean"/>
+            <column name="inOnderzoekVoornamen" type="boolean"/>
+            <column name="inOnderzoekVoorvoegsel" type="boolean"/>
+            <column name="inOnderzoekGeslachtsnaam" type="boolean"/>
+            <column name="aanduidingAanschrijving" type="VARCHAR(255)"/>
+            <column name="europeesKiesrecht" type="VARCHAR(255)"/>
+            <column name="einddatumUitsluitingEuropeesKiesrecht" type="VARCHAR(255)"/>
+            <column name="einddatumUitsluitingKiesrecht" type="VARCHAR(255)"/>
+            <column name="indicatieGeheim" type="VARCHAR(255)"/>
+            <column name="datumEersteInschrijvingGBA" type="VARCHAR(255)"/>
+            <column name="datumOpschortingBijhouding" type="VARCHAR(255)"/>
+            <column name="redenOpschortingBijhouding" type="VARCHAR(255)"/>
+            <column name="geslachtsaanduiding" type="VARCHAR(255)"/>
+            <column name="indicatieCurateleRegister" type="VARCHAR(255)"/>
+            <column name="indicatieGezagMinderjarige" type="VARCHAR(255)"/>
+            <column name="geboorteDatum" type="VARCHAR(255)"/>
+            <column name="geboortePlaats" type="VARCHAR(255)"/>
+            <column name="geboorteLand" type="VARCHAR(255)"/>
+            <column name="inOnderzoekGeboorte" type="boolean"/>
+            <column name="inOnderzoekGeboorteDatum" type="boolean"/>
+            <column name="inOnderzoekGeboortePlaats" type="boolean"/>
+            <column name="inOnderzoekGeboorteLand" type="boolean"/>
+            <column name="overlijdenDatum" type="VARCHAR(255)"/>
+            <column name="overlijdenPlaats" type="VARCHAR(255)"/>
+            <column name="overlijdenLand" type="VARCHAR(255)"/>
+            <column name="ouderAanduiding" type="VARCHAR(255)"/>
+            <column name="datumIngangFamilierechtelijkeBetrekking" type="VARCHAR(255)"/>
+            <column name="aktenummer" type="VARCHAR(255)"/>
+            <column name="registergemeenteAkte" type="VARCHAR(255)"/>
+            <column name="ontbindinghuwelijkPartnerschapDatum" type="VARCHAR(255)"/>
+            <column name="ontbindinghuwelijkPartnerschapPlaats" type="VARCHAR(255)"/>
+            <column name="ontbindinghuwelijkPartnerschapLand" type="VARCHAR(255)"/>
+            <column name="ontbindinghuwelijkPartnerschapReden" type="VARCHAR(255)"/>
+            <column name="adellijketitelpredikaat" type="VARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="generateUUID" author="bash">
+        <update tableName="Persoon">
+            <column name="uuid" valueComputed="uuid()">
+                uuid IS NULL
+            </column>
+        </update>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,6 @@
+management:
+  endpoints:
+    enabled-by-default: false
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG

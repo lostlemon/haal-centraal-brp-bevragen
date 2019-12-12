@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="createReisdocumentTable" author="akosh">
+        <createTable tableName="Reisdocument">
+            <column autoIncrement="true" name="id" type="BIGINT(20)">
+                <constraints primaryKey="true" unique="true"/>
+            </column>
+            <column name="reisdocumentnummer" type="VARCHAR(255)"/>
+            <column name="aanduidingInhoudingVermissingReisdocument" type="VARCHAR(255)"/>
+            <column name="soortReisdocument" type="VARCHAR(255)"/>
+            <column name="datumUitgifte" type="VARCHAR(255)"/>
+            <column name="autoriteitAfgifte" type="VARCHAR(255)"/>
+            <column name="datumEindeGeldigheid" type="VARCHAR(255)"/>
+            <column name="datumInhoudingOfVermissing" type="VARCHAR(255)"/>
+            <column name="persoon_id" type="BIGINT(20)">
+                <constraints foreignKeyName="FK_Persoon_Reisdoc" references="Persoon(id)" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

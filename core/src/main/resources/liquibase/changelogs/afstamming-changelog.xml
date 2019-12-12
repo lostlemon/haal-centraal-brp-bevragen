@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet id="createAfstammingTable" author="samdadfar">
+        <createTable tableName="Afstamming">
+            <column name="id" autoIncrement="true" type="BIGINT(20)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ouder_id" type="BIGINT(20)">
+                <constraints foreignKeyName="ouderIdFK" references="Persoon(id)" nullable="false"/>
+            </column>
+            <column name="kind_id" type="BIGINT(20)">
+                <constraints foreignKeyName="kindIdFK" references="Persoon(id)" nullable="false"/>
+            </column>
+            <column name="ouderAanduidingEnum" type="VARCHAR(32)"/>
+            <column name="datumIngangFamilierechtelijkeBetrekking" type="VARCHAR(8)"/>
+            <column name="uuid" type="VARCHAR(40)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

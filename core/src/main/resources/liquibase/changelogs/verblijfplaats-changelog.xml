@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="createVerblijfplaatsTable" author="samdadfar">
+        <createTable tableName="Verblijfplaats">
+            <column name="persoon_id" type="BIGINT(20)">
+                <constraints nullable="false" foreignKeyName="FK_verblijfsplaats_persoon" references="Persoon(id)"/>
+            </column>
+            <column autoIncrement="true" name="id" type="BIGINT(20)">
+                <constraints primaryKey="true" unique="true"/>
+            </column>
+            <column name="gemeenteVanInschrijving" type="VARCHAR(255)"/>
+            <column name="datumInschrijvingInGemeente" type="VARCHAR(255)"/>
+            <column name="woonplaatsnaam" type="VARCHAR(255)"/>
+            <column name="straatnaam" type="VARCHAR(255)"/>
+            <column name="huisletter" type="VARCHAR(255)"/>
+            <column name="huisnummer" type="VARCHAR(255)"/>
+            <column name="postcode" type="VARCHAR(255)"/>
+            <column name="ingangsdatumGeldigheid" type="VARCHAR(255)"/>
+            <column name="locatiebeschrijving" type="VARCHAR(256)"/>
+            <column name="huisnummerToevoeging" type="VARCHAR(256)"/>
+            <column name="naamOpenbareruimte" type="VARCHAR(256)"/>
+            <column name="identificatiecodeNummeraanduiding" type="VARCHAR(255)"/>
+            <column name="identificatiecodeVerblijfplaats" type="VARCHAR(255)"/>
+            <column name="functieAdres" type="VARCHAR(255)"/>
+            <column name="datumAanvangAdreshouding" type="VARCHAR(255)"/>
+            <column name="datumVestigingInNederland" type="VARCHAR(255)"/>
+            <column name="landVanWaarIngeschreven" type="VARCHAR(255)"/>
+            <column name="aanduidingBijHuisnummer" type="VARCHAR(255)"/>
+            <column name="verblijfBuitenlandLand" type="VARCHAR(255)"/>
+            <column name="verblijfBuitenlandAdresregel1" type="VARCHAR(255)"/>
+            <column name="verblijfBuitenlandAdresregel2" type="VARCHAR(255)"/>
+            <column name="verblijfBuitenlandAdresregel3" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="addVerblijfplaatsIdToPersoon" author="akosh">
+        <addColumn tableName="Persoon">
+            <column name="verblijfplaatshuidig_id" type="BIGINT(20)">
+                <constraints foreignKeyName="FK_VerblijfplaatsHuidig_Persoon" references="Verblijfplaats(id)"/>
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

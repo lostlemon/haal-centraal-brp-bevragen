@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="createVerblijfsTitelTable" author="akosh">
+        <createTable tableName="Verblijfstitel">
+            <column autoIncrement="true" name="id" type="BIGINT(20)">
+                <constraints primaryKey="true" unique="true"/>
+            </column>
+            <column name="aanduidingVerblijfstitel" type="VARCHAR(255)"/>
+            <column name="datumEindeVerblijfstitel" type="VARCHAR(255)"/>
+            <column name="datumIngangVerblijfstitel" type="VARCHAR(255)"/>
+            <column name="persoon_id" type="BIGINT(20)">
+                <constraints foreignKeyName="FK_Persoon_VerblijfsTitel" references="Persoon(id)" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="createPersoonVerblijfstitelTable" author="akosh">
+        <createTable tableName="Persoon_Verblijfstitel">
+            <column name="persoon_id" type="BIGINT(20)">
+                <constraints primaryKey="true" foreignKeyName="FK_PersoonId_Verblijfstitel" references="Persoon(id)"/>
+            </column>
+            <column name="verblijfstitel_id" type="BIGINT(20)">
+                <constraints primaryKey="true" foreignKeyName="FK_VerblijfstitelId_Persoon"
+                             references="Verblijfstitel(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

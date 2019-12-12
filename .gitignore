@@ -1,0 +1,9 @@
+/target/
+.classpath
+.project
+.settings/
+haalcentraal.log
+haalcentraal.log.*
+*.iml
+.idea
+.factorypath

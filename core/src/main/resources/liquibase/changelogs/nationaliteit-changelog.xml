@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="createNationaliteitTable" author="akosh">
+        <createTable tableName="Nationaliteit">
+            <column autoIncrement="true" name="id" type="BIGINT(20)">
+                <constraints primaryKey="true" unique="true"/>
+            </column>
+            <column name="nationaliteitCode" type="VARCHAR(255)"/>
+            <column name="redenOpnameNationaliteit" type="VARCHAR(255)"/>
+            <column name="aanduidingBijzonderNederlanderschap" type="VARCHAR(255)"/>
+            <column name="datumIngangGeldigheidNationaliteit" type="VARCHAR(255)"/>
+            <column name="persoon_id" type="BIGINT(20)">
+                <constraints foreignKeyName="FK_Persoon_Nationaliteit" references="Persoon(id)" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
+
+
+

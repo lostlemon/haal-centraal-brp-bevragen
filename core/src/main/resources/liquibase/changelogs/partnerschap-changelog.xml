@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet id="createPartnerschapTable" author="samdadfar">
+        <createTable tableName="Partnerschap">
+            <column name="id" autoIncrement="true" type="BIGINT(20)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="partner1_id" type="BIGINT(20)">
+                <constraints foreignKeyName="persoon1IdFK" references="Persoon(id)" nullable="false"/>
+            </column>
+            <column name="partner2_id" type="BIGINT(20)">
+                <constraints foreignKeyName="persoon2IdFK" references="Persoon(id)" nullable="false"/>
+            </column>
+            <column name="datumOntbinding" type="VARCHAR(255)"/>
+            <column name="soortVerbintenis" type="VARCHAR(255)"/>
+            <column name="aangaanHuwelijkPartnerschapDatum" type="VARCHAR(255)"/>
+            <column name="aangaanHuwelijkPartnerschapPlaats" type="VARCHAR(255)"/>
+            <column name="aangaanHuwelijkPartnerschapLand" type="VARCHAR(255)"/>
+            <column name="indicatieOnjuist" type="VARCHAR(255)"/>
+            <column name="uuid" type="VARCHAR(40)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

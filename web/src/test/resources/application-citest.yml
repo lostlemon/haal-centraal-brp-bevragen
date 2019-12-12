@@ -1,0 +1,5 @@
+logging:
+  level:
+    nl.vng: DEBUG
+server:
+  port: 8081

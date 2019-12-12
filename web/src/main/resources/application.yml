@@ -1,0 +1,72 @@
+version: '@project.version@'
+buildtimestamp: '@maven.build.timestamp@'
+projectVersion: '@project.version'
+git:
+  branch: '@git.branch@'
+  build:
+    host: '@git.build.host@'
+    time: '@git.build.time@'
+    user:
+      email: '@git.build.user.email@'
+      name: '@git.build.user.name@'
+    version: '@git.build.version@'
+  closest:
+    tag:
+      commit:
+        count: '@git.closest.tag.commit.count@'
+      name: '@git.closest.tag.name@'
+  commit:
+    id: '@git.commit.id@'
+    id.abbrev: '@git.commit.id.abbrev@'
+    time: '@git.commit.time@'
+    user:
+      email: '@git.commit.user.email@'
+      name: '@git.commit.user.name@'
+  dirty: '@git.dirty@'
+  remote:
+    origin:
+      url: '@git.remote.origin.url@'
+  tags: '@git.tags@'
+logging:
+  file: haalcentraal.log
+  level:
+    liquibase: WARN
+server:
+  use-forward-headers: true
+  compression:
+    enabled: true
+spring:
+  jackson:
+    default-property-inclusion: NON_NULL
+  datasource:
+    driverClassName: org.h2.Driver
+    password: ''
+    url: jdbc:h2:mem:testdb;IGNORECASE=TRUE;DB_CLOSE_DELAY=-1
+    username: sa
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+  liquibase:
+    change-log: classpath:/liquibase-changeLog.xml
+  mvc:
+    servlet:
+      load-on-startup: 1
+  output:
+    ansi:
+      enabled: ALWAYS
+management:
+  endpoints:
+    web:
+      base-path: /monitor
+      exposure:
+        include: '*'
