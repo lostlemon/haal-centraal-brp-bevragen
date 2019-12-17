@@ -1,7 +1,7 @@
 FROM maven:3.6.3-jdk-11 as build
 WORKDIR /app
 COPY . .
-RUN mvn -DskipTests install
+RUN mvn -B -DskipTests install
 
 FROM openjdk:11-jre
 WORKDIR /app
