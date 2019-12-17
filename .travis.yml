@@ -2,4 +2,4 @@ services:
   - docker
   
 script:
-  - docker build -t carlad/sinatra .
+  - docker build -t lostlemon/haalcentraal .
