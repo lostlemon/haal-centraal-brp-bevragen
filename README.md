@@ -3,7 +3,7 @@
 
 
 # haal-centraal-brp-bevragen
-Haal Centraal BRP bevragen, de referentie implementatie. De container wordt gemaakt met [travis-ci](https://travis-ci.com/lostlemon/haal-centraal-brp-bevragen) en naar [hub.docker.com](https://hub.docker.com/repository/docker/lostlemon/haalcentraal) geupload. Overarl en nergens te draaien dus met:
+Haal Centraal BRP bevragen, de referentie implementatie. De container wordt gemaakt met [travis-ci](https://travis-ci.com/lostlemon/haal-centraal-brp-bevragen) en naar [hub.docker.com](https://hub.docker.com/r/lostlemon/haalcentraal) geupload. Overarl en nergens te draaien dus met:
 
 ```
 docker run -p 8080:8080 -it lostlemon/haalcentraal
