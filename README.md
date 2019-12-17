@@ -2,8 +2,8 @@
 [![Api Status](https://img.shields.io/badge/dynamic/json?color=4c1&label=api&query=%24.status&url=https%3A%2F%2Fhaalcentraal.lostlemon.nl%2Fmonitor%2Fhealth)](https://haalcentraal.lostlemon.nl/)
 
 
-# haal-centraal-brp-bevragen
-Haal Centraal BRP bevragen, de referentie implementatie. De container wordt gemaakt met [travis-ci](https://travis-ci.com/lostlemon/haal-centraal-brp-bevragen) en naar [hub.docker.com](https://hub.docker.com/r/lostlemon/haalcentraal) geupload. Overarl en nergens te draaien dus met:
+# haal-centraal-brp-bevragen CI/CD
+Haal Centraal BRP bevragen, de referentie implementatie. De container wordt gebuild met [travis-ci](https://travis-ci.com/lostlemon/haal-centraal-brp-bevragen) en naar [hub.docker.com](https://hub.docker.com/r/lostlemon/haalcentraal) geupload. Overal en nergens te draaien met:
 
 ```
 docker run -p 8080:8080 -it lostlemon/haalcentraal
