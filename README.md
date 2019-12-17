@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/lostlemon/haal-centraal-brp-bevragen.svg?branch=master)](https://travis-ci.com/lostlemon/haal-centraal-brp-bevragen)
+
+
 # haal-centraal-brp-bevragen
 Haal Centraal BRP bevragen, de referentie implementatie
 
