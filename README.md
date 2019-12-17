@@ -4,8 +4,7 @@ Haal Centraal BRP bevragen
 Install
 -------
 
-Build and run the container:
-
+Build and run the container, then point your browser at: http://localhost:8080/
 
 Build the container
 -------------------
@@ -21,5 +20,6 @@ Run the container
 -----------------
 
 ```
-docker run -p 8080:8080 lostlemon/haalcentraal
+docker run -p 8080:8080 -it lostlemon/haalcentraal
 ```
+
