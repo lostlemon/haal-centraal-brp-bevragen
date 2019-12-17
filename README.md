@@ -9,8 +9,8 @@ Haal Centraal BRP bevragen, de referentie implementatie. De container wordt gebu
 docker run -p 8080:8080 -it lostlemon/haalcentraal
 ```
 
-Install
--------
+Local Build and Install 
+-----------------------
 
 Build and run the container, then point your browser at: http://localhost:8080/
 
