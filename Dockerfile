@@ -7,4 +7,6 @@ FROM openjdk:11-jre
 WORKDIR /app
 COPY --from=build /app/web/target/web.jar /app/app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar","/app/app.jar"]
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=production","-jar","/app/app.jar"]
+
+
