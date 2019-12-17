@@ -1,5 +1,5 @@
 # haal-centraal-brp-bevragen
-Haal Centraal BRP bevragen
+Haal Centraal BRP bevragen, de referentie implementatie
 
 Install
 -------
