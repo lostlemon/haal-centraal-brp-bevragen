@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/lostlemon/haal-centraal-brp-bevragen.svg?branch=master)](https://travis-ci.com/lostlemon/haal-centraal-brp-bevragen)
+[![Api Status](https://img.shields.io/badge/dynamic/json?color=4c1&label=api&query=%24.status&url=https%3A%2F%2Fhaalcentraal.lostlemon.nl%2Fmonitor%2Fhealth)](https://haalcentraal.lostlemon.nl/)
 
 
 # haal-centraal-brp-bevragen
